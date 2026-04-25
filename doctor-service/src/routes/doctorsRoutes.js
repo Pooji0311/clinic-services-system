@@ -50,9 +50,40 @@ const {
  *   put:
  *     summary: Update doctor by ID
  *     tags: [Doctors]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               name:
+ *                 type: string
+ *               specialty:
+ *                 type: string
+ *               availability:
+ *                 type: boolean
+ *     responses:
+ *       200:
+ *         description: Doctor updated successfully
  *   delete:
  *     summary: Delete doctor by ID
  *     tags: [Doctors]
+ *     parameters:
+ *       - in: path
+ *         name: id
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Doctor deleted successfully
  */
 
 router.get('/', getAllDoctors);
